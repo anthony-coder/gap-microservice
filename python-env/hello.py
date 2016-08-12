@@ -9,7 +9,7 @@ manager = Manager(app)
 @app.route('/<input>')
 def process(input):
     cli = Client(base_url='unix://var/run/docker.sock')
-    container = cli.create_container(image='rwlaub/gap:double', environment=["ARRAY=" + input])
+    container = cli.create_container(image='rwlaub/gap', environment=["ARRAY=" + input])
     cli.start(container['Id'])
     cli.wait(container['Id'])
     output = cli.logs(container['Id'], tail=1)
