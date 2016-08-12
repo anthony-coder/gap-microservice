@@ -1,16 +1,12 @@
 # gap-microservice
 
-To use first build the gap environment container
+To use, first pull the gap environment container
 ```
-$ docker build -t gap gap-env
-```
-then build python environment
-```
-$ docker build -t mypython python-env
+$ docker pull rwlaub/gap
 ```
 Now launch the python app in a container
 ```
-$ docker run --name flask -v /var/run/docker.sock:/var/run/docker.sock -d -p 5000:5000 mypython
+$ docker run --name flask -v /var/run/docker.sock:/var/run/docker.sock -d -p 5000:5000 rwlaub/flask
 ```
 You can send requests to flask with
 ```
