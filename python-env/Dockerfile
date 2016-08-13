@@ -1,4 +1,5 @@
 FROM python
+MAINTAINER rwlaub
 RUN pip install flask
 RUN pip install docker-py
 RUN pip install flask-script
